@@ -1,0 +1,13 @@
+if (mc.thePlayer.hurtTime == 9) {
+            this.lastY = mc.thePlayer.posY;
+            this.boost = 0.2f;
+            LogUtil.sendMessage( moveUtil.getSpeed(),"chat");
+        }
+
+        if (Math.abs(this.lastY - mc.thePlayer.posY) > 0.5D && mc.thePlayer.hurtTime > 5) { //Mid-Air strafe bypass XD nice one
+            this.boost /= 1.25f;
+        }
+
+        if (mc.thePlayer.hurtTime == 7 || mc.thePlayer.hurtTime == 6) {
+            moveUtil.setSpeed(this.boost);
+        }
