@@ -1,0 +1,26 @@
+    public void getStep() {
+        final float stepHeight = BlockUtil.getBlockHeight(mc.thePlayer);
+        if(stepHeight > 0.75 && stepHeight < 1.025){
+            if(!mc.thePlayer.isOnLadder() &&  mc.thePlayer.onGround&& mc.thePlayer.stepHeight != 1){
+                mc.thePlayer.motionY = 0.408;
+                mc.thePlayer.onGround = false;
+                mc.thePlayer.stepHeight = 1;
+            }else{
+                mc.thePlayer.stepHeight = 0.5F;
+                if( mc.thePlayer.isCollidedHorizontally && ! mc.thePlayer.isOnLadder())  mc.thePlayer.onGround = true;
+            }
+        }else if(stepHeight > 1.025 && stepHeight < 1.525 || (!mc.thePlayer.onGround && mc.thePlayer.isCollidedHorizontally && stepHeight == 0.5f)){
+            if(!mc.thePlayer.isOnLadder() &&  mc.thePlayer.onGround&& mc.thePlayer.stepHeight != 1){
+                mc.thePlayer.motionY = 0.42;
+                mc.thePlayer.onGround = false;
+                mc.thePlayer.stepHeight = 1;
+            }else{
+                mc.thePlayer.stepHeight = 0.5F;
+                if( mc.thePlayer.isCollidedHorizontally && ! mc.thePlayer.isOnLadder())  mc.thePlayer.onGround = true;
+            }
+        }else{
+            if(mc.thePlayer.stepHeight == 1){
+                mc.thePlayer.stepHeight  = 0.5f;
+            }
+        }
+    }
