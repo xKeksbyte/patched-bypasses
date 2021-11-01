@@ -1,0 +1,21 @@
+[PATCHED]
+                if (this.mc.thePlayer.onGround) {
+                    if (!ModuleCriticals.isCritting) {
+                        this.mc.thePlayer.jump();
+                        if (!ModuleKillAura.isAttacking) {
+                            this.mc.thePlayer.motionY = 0.092;
+                        }
+                    }
+                    this.setSpeed(0.065f + getRandomFloat(0.0f, 0.02f));
+                    this.tick = 0;
+                    break;
+                }
+                this.tick++;
+                if (this.tick == 1) {
+                    this.setSpeed(1.7f);
+                }
+                else {
+                    this.setSpeed(0.17f + PlayerUtils.getRandomFloat(-0.02f, 0.05f));
+                }
+               
+                
