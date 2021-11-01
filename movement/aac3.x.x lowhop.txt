@@ -1,0 +1,34 @@
+                    if (this.mc.thePlayer.onGround) {
+                        this.mc.thePlayer.jump();
+                        this.mc.thePlayer.motionY = 0.389f;
+                        this.tick = 0;
+                        break;
+                    }
+                    this.tick++;
+                    mc.thePlayer.motionX *= 1.0154f;
+                    mc.thePlayer.motionZ *= 1.0154f;
+                    if (this.tick == 4) {
+                        this.mc.thePlayer.motionY = -(this.mc.thePlayer.isCollidedHorizontally ? 0.051f : 0.0611f);
+                    }
+                    final EntityPlayerSP thePlayer4 = this.mc.thePlayer;
+                    thePlayer4.motionY -= (this.mc.thePlayer.isCollidedHorizontally ? 0.022f : 0.0248f);
+                    this.setSpeed(Math.sqrt(this.mc.thePlayer.motionX * this.mc.thePlayer.motionX + this.mc.thePlayer.motionZ * this.mc.thePlayer.motionZ));
+                    switch (this.tick) {
+                        case 1: {
+                            this.mc.timer.timerSpeed = 1.04f;
+                            break;
+                        }
+                        case 2: {
+                            this.mc.timer.timerSpeed = 1.0f;
+                            break;
+                        }
+                        case 4: {
+                            this.mc.timer.timerSpeed = 1.035f;
+                            break;
+                        }
+                        case 5: {
+                            this.mc.timer.timerSpeed = 1.0f;
+                            break;
+                        }
+                    }
+                    break;
