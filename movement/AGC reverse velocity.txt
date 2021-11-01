@@ -1,0 +1,4 @@
+if (mc.thePlayer.hurtTime == 7) {
+            mc.thePlayer.motionX *= -0.8f;
+            mc.thePlayer.motionZ *= -0.8f;
+        }
