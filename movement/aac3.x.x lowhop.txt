@@ -10,8 +10,7 @@
                     if (this.tick == 4) {
                         this.mc.thePlayer.motionY = -(this.mc.thePlayer.isCollidedHorizontally ? 0.051f : 0.0611f);
                     }
-                    final EntityPlayerSP thePlayer4 = this.mc.thePlayer;
-                    thePlayer4.motionY -= (this.mc.thePlayer.isCollidedHorizontally ? 0.022f : 0.0248f);
+                    mc.thePlayer.motionY -= (this.mc.thePlayer.isCollidedHorizontally ? 0.022f : 0.0248f);
                     this.setSpeed(Math.sqrt(this.mc.thePlayer.motionX * this.mc.thePlayer.motionX + this.mc.thePlayer.motionZ * this.mc.thePlayer.motionZ));
                     switch (this.tick) {
                         case 1: {
